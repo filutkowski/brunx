@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aktualizacja</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      color: #212529;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px 32px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      max-width: 420px;
+    }
+
+    h1 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+      color: #2a7ae2;
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 1em;
+      color: #444;
+    }
+
+    .progress {
+      width: 100%;
+      height: 8px;
+      background: #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .progress-bar {
+      position: absolute;
+      top: 0;
+      left: -50%;
+      height: 100%;
+      width: 50%;
+      background: #2a7ae2;
+      animation: loadingMove 1.2s linear infinite;
+    }
+
+    @keyframes loadingMove {
+      0%   { left: -50%; }
+      100% { left: 100%; }
+    }
+
+    #status {
+      font-size: 0.95em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Aktualizacja w toku...</h1>
+    <p>Pobieranie najnowszej wersji aplikacji.</p>
+    <div class="progress"><div class="progress-bar"></div></div>
+    <div id="status">Trwa przygotowywanie aktualizacji...</div>
+  </div>
+
+  <script>
+    // Jeśli chcesz dynamicznie zmieniać tekst statusu z main.js:
+    window.__setUpdateStatus = function(text) {
+      const status = document.getElementById('status');
+      if (status) status.textContent = text;
+    };
+  </script>
+</body>
+</html>

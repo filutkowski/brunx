@@ -1,0 +1,12 @@
+# Configuration: auto plugin service list
+
+[[pluginList]]
+name = "download"
+version = "1.0.0"
+enabled = true
+updateTime = 200
+
+[[pluginList]]
+name = "updateSystem"
+version = "1.0.0"
+enabled = true

@@ -1,0 +1,40 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "pnpm exec electron-builder --publish=always"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.4",
+  "build": {
+    "appId": "com.brunx.web",
+    "productName": "Brunx",
+    "asar": false,
+    "win": {
+      "target": "dir"
+    },
+      "publish": [
+    {
+      "provider": "github",
+      "owner": "filutkowski",
+      "repo": "brunx"
+    }
+  ]
+
+
+  },
+  "dependencies": {
+    "brunxwindow": "file:../packages/brunxwindow",
+    "brunxplugins": "file:../packages/brunxautoplugins",
+    "ws": "^8.18.3"
+  },
+  "type": "module",
+  "devDependencies": {
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12"
+  }
+}

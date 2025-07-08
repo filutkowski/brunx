@@ -1,0 +1,24 @@
+{
+  "name": "brunx",
+  "version": "1.0.0",
+  "description": "Brunx Web Browser",
+  "private": true,
+  "main": "./app/main.js",
+  "scripts": {
+    "install:all": "pnpm install --dangerously-allow-all-builds",
+    "build": "concurrently \"pnpm install:all\" \"npx lerna run build\""
+  },
+  "keywords": [],
+  "author": "Michał",
+  "license": "MIT",
+  "packageManager": "pnpm@10.12.4",
+  "workspaces": [
+    "packages/*",
+    "app"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "lerna": "^8.2.3"
+  },
+  "type": "module"
+}

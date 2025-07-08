@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Brunx – Szybka przeglądarka</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 { color: #2a7ae2; }
+    #search {
+      width: 350px;
+      padding: 12px;
+      font-size: 1.1em;
+      border-radius: 6px;
+      border: 1px solid #bbb;
+      margin-bottom: 12px;
+    }
+    #searchBtn {
+      padding: 10px 20px;
+      font-size: 1.05em;
+      border: none;
+      border-radius: 6px;
+      background-color: #2a7ae2;
+      color: white;
+      cursor: pointer;
+      margin-bottom: 24px;
+    }
+    .info {
+      color: #444;
+      font-size: 1.1em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Brunx</h1>
+  <input id="search" type="text" placeholder="Wyszukaj lub wpisz adres URL..." autofocus>
+  <button id="searchBtn">Szukaj</button>
+  <div class="info">
+    Brunx to bardzo optymalna, szybka i lekka przeglądarka.<br>
+    Skupiamy się na wydajności i prostocie.
+  </div>
+
+  <script>
+    const socket = new WebSocket('ws://localhost:3000');
+
+    function handleSearch() {
+      const input = document.getElementById('search');
+      let val = input.value.trim();
+      if (val) {
+        if (!/^https?:\/\//.test(val) && !val.includes('.')) {
+          val = 'https://www.google.com/search?q=' + encodeURIComponent(val);
+        } else if (!/^https?:\/\//.test(val)) {
+          val = 'http://' + val;
+        }
+        socket.send(val);
+        location.href = val;
+      }
+    }
+
+    socket.onopen = () => {
+      document.getElementById('searchBtn').addEventListener('click', handleSearch);
+    };
+  </script>
+</body>
+</html>

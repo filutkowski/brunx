@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Widżet pobierania</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #fff; }
+    #downloads { padding: 10px 14px; }
+    .file { border-bottom: 1px solid #eee; margin-bottom: 8px; padding-bottom: 6px; }
+    .name { font-weight: 600; }
+    .bar {
+      height: 6px;
+      background: #ddd;
+      border-radius: 4px;
+      margin: 6px 0;
+      overflow: hidden;
+    }
+    .bar-inner {
+      height: 100%;
+      background: #2a7ae2;
+      width: 0%;
+      transition: width 0.2s ease-in-out;
+    }
+    .status { font-size: 0.9em; color: #555; }
+  </style>
+</head>
+<body>
+  <div id="downloads"></div>
+
+  <script>
+    const downloads = new Map();
+
+    function updateUI() {
+      const container = document.getElementById('downloads');
+      container.innerHTML = '';
+      downloads.forEach((data, id) => {
+        const percent = data.total > 0 ? ((data.received / data.total) * 100).toFixed(1) : 0;
+        const el = document.createElement('div');
+        el.className = 'file';
+        el.innerHTML = `
+          <div class="name">${id}</div>
+          <div class="bar"><div class="bar-inner" style="width:${percent}%"></div></div>
+          <div class="status">${(data.received/1048576).toFixed(1)} / ${(data.total/1048576).toFixed(1)} MB • ${data.state}</div>
+        `;
+        container.appendChild(el);
+      });
+    }
+
+    // Funkcja globalna, z której korzysta main.js przez `executeJavaScript`
+    window.__injectDownloadProgress = function(data) {
+      downloads.set(data.id, data);
+      updateUI();
+    };
+  </script>
+</body>
+</html>
