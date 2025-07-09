@@ -1,6 +1,6 @@
 {
   "name": "brunx",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Brunx Web Browser",
   "private": true,
   "main": "./app/main.js",
