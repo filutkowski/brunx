@@ -1,6 +1,3 @@
-import pkg from 'electron-updater';
-const { autoUpdater } = pkg;
-
 import { app } from 'electron';
 import window from '../../../brunxwindow/main.js';
 import { fileURLToPath } from 'url';
@@ -8,8 +5,8 @@ import path from 'path';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export function start() {
-  autoUpdater.checkForUpdates().then(result => {
+/*export function start() {
+
     const remoteVersion = result?.updateInfo?.version;
     const currentVersion = app.getVersion();
 
@@ -40,12 +37,7 @@ export function start() {
       });
 
       // Postęp pobierania
-      autoUpdater.on('download-progress', (progress) => {
-        const percent = progress.percent.toFixed(1);
-        win.webContents.executeJavaScript(`
-          window.__setUpdateStatus?.("Pobieranie... ${percent}%");
-        `);
-      });
+
 
       // Po zakończeniu pobierania
       autoUpdater.on('update-downloaded', () => {
@@ -56,12 +48,11 @@ export function start() {
       });
 
       // Rozpocznij pobieranie
-      autoUpdater.downloadUpdate();
+
 
     } else {
       console.log('✅ Brak nowej wersji — wszystko aktualne');
     }
-  }).catch(err => {
-    console.error('❌ Błąd sprawdzania aktualizacji:', err);
-  });
+  
 }
+    */
