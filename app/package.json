@@ -16,14 +16,9 @@
     "asar": false,
     "win": {
       "target": "dir"
-    },
-      "publish": [
-    {
-      "provider": "github",
-      "owner": "filutkowski",
-      "repo": "brunx"
     }
-  ]
+
+  
 
 
   },
@@ -34,7 +29,6 @@
   },
   "type": "module",
   "devDependencies": {
-    "electron": "^37.2.0",
-    "electron-builder": "^26.0.12"
+    "electron": "^37.2.0"
   }
 }
