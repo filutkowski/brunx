@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "build": "pnpm exec electron-builder --publish=always"
+    "build": "pnpm exec electron-builder"
   },
   "keywords": [],
   "author": "",
