@@ -1,5 +1,5 @@
-import window from "Brunxwindow";
-import * as plugins from "Brunxplugins";
+import window from "../packages/brunxwindow/main.js";
+import * as plugins from "../packages/brunxautoplugins/main.js";
 import { app } from "electron";
 import { WebSocketServer } from "ws";
 

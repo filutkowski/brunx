@@ -17,14 +17,8 @@
     "win": {
       "target": "dir"
     }
-
-  
-
-
   },
   "dependencies": {
-    "brunxwindow": "file:../packages/brunxwindow",
-    "brunxplugins": "file:../packages/brunxautoplugins",
     "ws": "^8.18.3"
   },
   "type": "module",

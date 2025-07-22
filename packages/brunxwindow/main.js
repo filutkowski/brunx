@@ -152,7 +152,9 @@ function createAppMenu() {
 function refreshMenu() {
   createAppMenu();
 }
-
+function SetTabsWindow(tabs) {
+TabsWindow = tabs
+}
 app.on('ready', () => {
   createAppMenu();
   createWindow();
@@ -170,4 +172,4 @@ app.on('activate', () => {
   }
 });
 
-export default { createWindow, addTab, removeTab, getTabs, changeTab, refreshMenu, TabsWindow, activeTabIndex, windowSettings };
+export default { createWindow, addTab, removeTab, getTabs, changeTab, refreshMenu, TabsWindow, activeTabIndex, windowSettings, SetTabsWindow };
