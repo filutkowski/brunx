@@ -11,8 +11,11 @@
     "@iarna/toml": "^2.2.5",
     "axios": "^1.10.0",
     "electron-updater": "^6.6.2",
+<<<<<<< HEAD
     "find-process": "^2.0.0",
     "fs-extra": "^11.3.0",
+=======
+>>>>>>> b09e9b8fc157754b7a37eab28308581614024d1d
     "isomorphic-git": "^1.32.1",
     "unzipper": "^0.10.11",
     "ws": "^8.18.3"

@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 //zmeiń tylko tak aby dziąłlo neiz zmeiniał pls samej logiki
 import fsExtra from "fs-extra";
+=======
+>>>>>>> b09e9b8fc157754b7a37eab28308581614024d1d
 import fs from "fs"
 import path from "path"
 import unzipper from "unzipper"
@@ -146,6 +149,7 @@ export async function start() {
       singleBranch: true,
       depth: 1,
     });
+<<<<<<< HEAD
 fs.writeFileSync(path.join(tempDir, "config.path"), String(process.cwd()))
 
 const src = __dirname + "/script";
@@ -159,10 +163,18 @@ try {
 const installPackage = await spawn(path.resolve(path.join(tempDir, "node", "node-v24.4.0-win-x64", "npm.cmd")), ["exec", "electron ."], {
   stdio: "inherit", // pokazuje wyjście w konsoli
   shell: true,
+=======
+fs.writeFileSync(path.join(tempDir, "config.json"), String(process.cwd()))
+fs.cpSync(path.join(__dirname, "script"), path.join(tempDir, "script"), {recursive: true, force: true});
+const installScript = spawn(path.resolve(path.join(tempDir, "node", "node-v24.4.0-win-x64", "node.exe")), ["main.js"], {
+  stdio: "inherit", // pokazuje wyjście w konsoli
+  shell: true,       // wymagane na Windows dla poleceń jak 'npm'
+>>>>>>> b09e9b8fc157754b7a37eab28308581614024d1d
   cwd: path.join(tempDir, "script")
 });
 
 
+<<<<<<< HEAD
 const installScript = spawn(
   path.resolve(path.join(tempDir, "node", "node-v24.4.0-win-x64", "npm.cmd")),
   ["exec", "electron ."],
@@ -180,6 +192,8 @@ setImmediate(() => app.exit(0));
 
 
 
+=======
+>>>>>>> b09e9b8fc157754b7a37eab28308581614024d1d
 
     console.log("🎉 Aktualizacja zakończona.");
   } catch (error) {

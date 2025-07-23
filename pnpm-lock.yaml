@@ -36,12 +36,15 @@ importers:
       electron-updater:
         specifier: ^6.6.2
         version: 6.6.2
+<<<<<<< HEAD
       find-process:
         specifier: ^2.0.0
         version: 2.0.0
       fs-extra:
         specifier: ^11.3.0
         version: 11.3.0
+=======
+>>>>>>> b09e9b8fc157754b7a37eab28308581614024d1d
       isomorphic-git:
         specifier: ^1.32.1
         version: 1.32.1
@@ -650,10 +653,13 @@ packages:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
     engines: {node: '>= 0.8'}
 
+<<<<<<< HEAD
   commander@12.1.0:
     resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
     engines: {node: '>=18'}
 
+=======
+>>>>>>> b09e9b8fc157754b7a37eab28308581614024d1d
   common-ancestor-path@1.0.1:
     resolution: {integrity: sha512-L3sHRo1pXXEqX8VU28kfgUY+YGsk09hPqZiZmLacNib6XNTCM8ubYeT7ryXQw8asB1sKgcU5lkB7ONug08aB8w==}
 
@@ -3267,8 +3273,11 @@ snapshots:
     dependencies:
       delayed-stream: 1.0.0
 
+<<<<<<< HEAD
   commander@12.1.0: {}
 
+=======
+>>>>>>> b09e9b8fc157754b7a37eab28308581614024d1d
   common-ancestor-path@1.0.1: {}
 
   compare-func@2.0.0:
